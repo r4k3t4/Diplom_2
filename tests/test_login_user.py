@@ -1,8 +1,8 @@
-import pytest
-from src.helpers import register_new_user_and_return_email_password_name
+import allure
+
 from src.config import Config
 from src.data import Data
-import allure
+from src.helpers import register_new_user_and_return_email_password_name
 
 
 class TestLoginUser:

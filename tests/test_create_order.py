@@ -1,7 +1,6 @@
-import pytest
-from src.helpers import telephone_number, new_order
-from src.data import Data
 import allure
+
+from src.data import Data
 
 
 class TestCreateOrder:
@@ -34,7 +33,7 @@ class TestCreateOrder:
             "message"] == Data.INGREDIENT400
 
     @allure.title("Test create order invalid hash ingredient")
-    def test_create_order_invalid_hash_ingridient(self,auth_api):
+    def test_create_order_invalid_hash_ingridient(self, auth_api):
         r = auth_api.get_ingredients()
         ingredients = r.json()["data"][0]["_id"] + '2'
         response = auth_api.create_order(token='', ingredients=ingredients)
